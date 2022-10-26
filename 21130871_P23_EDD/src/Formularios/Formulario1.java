@@ -205,6 +205,21 @@ public class Formulario1 extends javax.swing.JFrame {
     public void infijaAPrefija(){
         if(entradaValida()){
             invertirCola(cola);
+            int tam = cola.size();
+            for(int i = 0; i < tam; i++){
+                char c = cola.remove();
+                switch (c) {
+                    case '(':
+                        cola.add(')');
+                        break;
+                    case ')':
+                        cola.add('(');
+                        break;
+                    default:
+                        cola.add(c);
+                        break;
+                }
+            }
             sacarOperadoresPrefijo();
             while(!outputStack.isEmpty())
                 cola.add(outputStack.pop());
@@ -213,6 +228,7 @@ public class Formulario1 extends javax.swing.JFrame {
     
     public void infijaAPostfija(){
         if(entradaValida()){
+           
             sacarOperadoresPosfijo();
             while(!outputStack.isEmpty())
                 cola.add(outputStack.pop());
@@ -232,10 +248,8 @@ public class Formulario1 extends javax.swing.JFrame {
                 else if(c == '(') {
                 while(!operatorStack.isEmpty())
                         outputStack.add(operatorStack.pop());
-                operatorStack.add(c);
                 }// CHECAR ESTO
                 else if(c == ')'){
-                    operatorStack.add(c); 
                 }
                 else{
                     if(!operatorStack.empty()){
@@ -269,13 +283,10 @@ public class Formulario1 extends javax.swing.JFrame {
                     outputStack.add(c);
                 }
                 else if(c == '(') {
-                operatorStack.add(c);
                 }// CHECAR ESTO
                 else if(c == ')'){
                     while(!operatorStack.isEmpty())
                         outputStack.add(operatorStack.pop());
-
-                    operatorStack.add(c); 
                 }
                 else{
                     if(!operatorStack.empty()){

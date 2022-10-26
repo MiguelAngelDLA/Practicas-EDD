@@ -51,15 +51,15 @@ public class ListaEnlazada<T> {
     }
     
     public T elimAlInicio(){
-        Object retorno = null;
+        T retorno = null;
         if(!this.listaVacia())
             if(primero==ultimo){
-                retorno = primero.getDato();
+                retorno = (T)primero.getDato();
                 primero = null;
                 ultimo = null;
             }else{
-                retorno = primero.getDato();
-                primero.setSig(primero.getSig());
+                retorno = (T)primero.getDato();
+                primero = primero.getSig();
             }
         else
             JOptionPane.showMessageDialog(null, "La lista está vacia");
@@ -76,7 +76,7 @@ public class ListaEnlazada<T> {
                 ultimo = null;
             }else{
                 Nodo aux = primero;
-                
+                retorno = ultimo.getDato();
                 while(aux.getSig() != ultimo){
                     aux = aux.getSig();
                 }
@@ -96,11 +96,12 @@ public class ListaEnlazada<T> {
         if(!listaVacia()){
             aux = this.primero;
             
-            while(aux.getSig() != null){
+            while(aux != null){
                 cont++;
                 aux = aux.getSig();
             }
         }
         return cont;
     }
+    
 }

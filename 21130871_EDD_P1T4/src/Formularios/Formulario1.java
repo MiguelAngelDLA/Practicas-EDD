@@ -59,7 +59,6 @@ public class Formulario1 extends javax.swing.JFrame {
             new Object [][] {
                 {},
                 {},
-                {},
                 {}
             },
             new String [] {
@@ -153,38 +152,62 @@ public class Formulario1 extends javax.swing.JFrame {
 
     private void jButtonInsertarIniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInsertarIniActionPerformed
         // TODO add your handling code here:
+        int numero = Integer.parseInt(this.jTableAleatorio.getValueAt(0, 0).toString());
+        String nombre = this.jTableAleatorio.getValueAt(0, 1).toString();
+        double costo = Double.parseDouble(this.jTableAleatorio.getValueAt(0, 2).toString());
+        
+        Dato oDato = new Dato(numero, nombre, costo);
+        
+       listaEn.insertarAlInicio(oDato);
+       
+       this.mostrarListaEnlazada();
     }//GEN-LAST:event_jButtonInsertarIniActionPerformed
 
     private void jButtonInsertarFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInsertarFinActionPerformed
         // TODO add your handling code here:
+                // TODO add your handling code here:
+        int numero = Integer.parseInt(this.jTableAleatorio.getValueAt(0, 0).toString());
+        String nombre = this.jTableAleatorio.getValueAt(0, 1).toString();
+        double costo = Double.parseDouble(this.jTableAleatorio.getValueAt(0, 2).toString());
+        
+        Dato oDato = new Dato(numero, nombre, costo);
+        
+       listaEn.insAlFinal(oDato);
+       
+       this.mostrarListaEnlazada();
     }//GEN-LAST:event_jButtonInsertarFinActionPerformed
 
     private void jButtonElimIniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonElimIniActionPerformed
         // TODO add your handling code here:
+        listaEn.elimAlInicio();
+        this.mostrarListaEnlazada();
     }//GEN-LAST:event_jButtonElimIniActionPerformed
 
     private void jButtonElimFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonElimFinActionPerformed
         // TODO add your handling code here:
+        listaEn.elimAlFin();
+        this.mostrarListaEnlazada();
     }//GEN-LAST:event_jButtonElimFinActionPerformed
 
     private void jButtonAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAleatorioActionPerformed
         // TODO add your handling code here:
         Dato oDato= new Dato();
         oDato.aleatorio(jTableAleatorio);
-        listaEn.insAlFinal(oDato);
         mostrarListaEnlazada();
     }//GEN-LAST:event_jButtonAleatorioActionPerformed
 
     public void mostrarListaEnlazada(){
+        
         if(!listaEn.listaVacia()){
             Dato aux = new Dato(); 
+            int nodos = listaEn.contNodos();
             DefaultTableModel modelo = (DefaultTableModel)jTableMostrar.getModel();
-            
-            for(int i = 0; i < listaEn.contNodos(); i++){
+                        
+            modelo.setColumnCount(nodos);
+            for(int i = 0; i < nodos; i++){
                 aux = listaEn.elimAlInicio();
                 aux.mostrarDato(jTableMostrar, i);
                 listaEn.insAlFinal(aux);
-                modelo.setColumnCount(i);
             }
         }
         else
