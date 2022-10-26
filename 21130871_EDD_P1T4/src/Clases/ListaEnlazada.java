@@ -5,6 +5,7 @@
  */
 package Clases;
 
+import java.util.Stack;
 import javax.swing.JOptionPane;
 
 /**
@@ -104,4 +105,27 @@ public class ListaEnlazada<T> {
         return cont;
     }
     
+    
+    public void invertirConPila(){
+        if(this.contNodos() >= 2){
+            Stack<T> pila = new Stack<>();
+            
+            while(!this.listaVacia()){
+                pila.push(this.elimAlInicio());
+            }
+            
+            while(!pila.isEmpty()){
+                this.insAlFinal(pila.pop());
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Error en Invertir cola");
+        }
+    }
+    
+    public void invertirConLista(){
+        if(this.contNodos() >= 2){
+            
+        }
+    }
 }

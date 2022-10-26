@@ -42,6 +42,7 @@ public class Formulario1 extends javax.swing.JFrame {
         jButtonInsertarFin = new javax.swing.JButton();
         jButtonElimIni = new javax.swing.JButton();
         jButtonElimFin = new javax.swing.JButton();
+        jButtonInvertir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,6 +103,13 @@ public class Formulario1 extends javax.swing.JFrame {
             }
         });
 
+        jButtonInvertir.setText("Voltear Lista");
+        jButtonInvertir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInvertirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -127,6 +135,10 @@ public class Formulario1 extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jButtonElimIni, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButtonInvertir)
+                .addGap(42, 42, 42))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,7 +156,9 @@ public class Formulario1 extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(jButtonInvertir)
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         pack();
@@ -195,6 +209,12 @@ public class Formulario1 extends javax.swing.JFrame {
         oDato.aleatorio(jTableAleatorio);
         mostrarListaEnlazada();
     }//GEN-LAST:event_jButtonAleatorioActionPerformed
+
+    private void jButtonInvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInvertirActionPerformed
+        // TODO add your handling code here:
+        listaEn.invertirConPila();
+        mostrarListaEnlazada();
+    }//GEN-LAST:event_jButtonInvertirActionPerformed
 
     public void mostrarListaEnlazada(){
         
@@ -254,6 +274,7 @@ public class Formulario1 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonElimIni;
     private javax.swing.JButton jButtonInsertarFin;
     private javax.swing.JButton jButtonInsertarIni;
+    private javax.swing.JButton jButtonInvertir;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableAleatorio;
