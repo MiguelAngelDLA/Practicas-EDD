@@ -5,6 +5,8 @@
  */
 package Clases;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 import javax.swing.JOptionPane;
 
@@ -125,7 +127,46 @@ public class ListaEnlazada<T> {
     
     public void invertirConLista(){
         if(this.contNodos() >= 2){
+            ListaEnlazada<T> aux = new ListaEnlazada();
             
+            while(!this.listaVacia()){
+                aux.insertarAlInicio(this.elimAlFin());
+            }
+            
+            while(!aux.listaVacia()){
+                this.insertarAlInicio(aux.elimAlInicio());
+            }
+        }
+    }
+    
+    public void intercambiarElemento(int pos1, int pos2){
+        T elem1 = null;
+        T elem2 = null;
+        
+        Queue<T> aux = new LinkedList();
+        
+        int contador = 1;
+        while(!this.listaVacia()){
+            if(contador != pos1 && contador != pos2)
+                aux.add(this.elimAlInicio());
+            if(contador == pos1){
+                elem1 = this.elimAlInicio();
+            }
+            if(contador == pos2){
+                elem2 = this.elimAlInicio();
+            }
+            
+            contador++;
+        }
+        contador = 1;
+        while(!aux.isEmpty()){
+            if(contador != pos1 && contador != pos2)
+                this.insAlFinal(aux.remove());
+            if(contador == pos1)
+                this.insAlFinal(elem2);
+            else if(contador == pos2)
+                this.insAlFinal(elem1);
+            contador++;
         }
     }
 }
