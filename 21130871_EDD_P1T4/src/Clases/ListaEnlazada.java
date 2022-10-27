@@ -9,6 +9,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -123,6 +125,19 @@ public class ListaEnlazada<T> {
         else{
             JOptionPane.showMessageDialog(null, "Error en Invertir cola");
         }
+    }
+    
+    public Nodo getNodo(int posicion){
+        Nodo aux = primero;
+        if(this.contNodos() == 1)
+            aux = this.primero;
+        else{
+            for(int i = 0; i < posicion; i++){
+             aux = aux.getSig();
+            }
+        
+        }
+        return aux;
     }
     
     public void invertirConLista(){

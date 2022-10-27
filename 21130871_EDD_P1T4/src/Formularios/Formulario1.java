@@ -7,7 +7,9 @@ package Formularios;
 
 import Clases.Dato;
 import Clases.ListaEnlazada;
+import Clases.Nodo;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -45,6 +47,7 @@ public class Formulario1 extends javax.swing.JFrame {
         jButtonInvertir = new javax.swing.JButton();
         jButtonLista = new javax.swing.JButton();
         jButtonIntercambiar = new javax.swing.JButton();
+        jButtonIntercambiar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,6 +129,13 @@ public class Formulario1 extends javax.swing.JFrame {
             }
         });
 
+        jButtonIntercambiar1.setText("Mostrar sin modificar");
+        jButtonIntercambiar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIntercambiar1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -154,11 +164,12 @@ public class Formulario1 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonIntercambiar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonLista))
-                    .addComponent(jButtonInvertir))
+                    .addComponent(jButtonIntercambiar1)
+                    .addComponent(jButtonIntercambiar))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonLista, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonInvertir, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(42, 42, 42))
         );
         layout.setVerticalGroup(
@@ -178,7 +189,9 @@ public class Formulario1 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
-                .addComponent(jButtonInvertir)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonInvertir)
+                    .addComponent(jButtonIntercambiar1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonLista)
@@ -213,7 +226,7 @@ public class Formulario1 extends javax.swing.JFrame {
         
        listaEn.insAlFinal(oDato);
        
-       this.mostrarListaEnlazada();
+       this.mostrarListaSinModificar(jTableMostrar);
     }//GEN-LAST:event_jButtonInsertarFinActionPerformed
 
     private void jButtonElimIniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonElimIniActionPerformed
@@ -221,6 +234,23 @@ public class Formulario1 extends javax.swing.JFrame {
         listaEn.elimAlInicio();
         this.mostrarListaEnlazada();
     }//GEN-LAST:event_jButtonElimIniActionPerformed
+
+    public void mostrarListaSinModificar(JTable tabla){
+        if(listaEn.contNodos() > 0){
+        Dato aux; 
+        
+            int nodos = listaEn.contNodos();
+            DefaultTableModel modelo = (DefaultTableModel)tabla.getModel();
+            
+            modelo.setColumnCount(nodos);
+            for(int i = 0; i < nodos; i++){
+                aux = (Dato)listaEn.getNodo(i).getDato();
+                aux.mostrarDato(tabla, i);
+            }
+        }
+        else
+            JOptionPane.showMessageDialog(null, "La lista está vacía");
+        }
 
     private void jButtonElimFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonElimFinActionPerformed
         // TODO add your handling code here:
@@ -253,6 +283,10 @@ public class Formulario1 extends javax.swing.JFrame {
         listaEn.intercambiarElemento(2, listaEn.contNodos() - 1);
         mostrarListaEnlazada();
     }//GEN-LAST:event_jButtonIntercambiarActionPerformed
+
+    private void jButtonIntercambiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIntercambiar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonIntercambiar1ActionPerformed
 
     public void mostrarListaEnlazada(){
         
@@ -313,6 +347,7 @@ public class Formulario1 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonInsertarFin;
     private javax.swing.JButton jButtonInsertarIni;
     private javax.swing.JButton jButtonIntercambiar;
+    private javax.swing.JButton jButtonIntercambiar1;
     private javax.swing.JButton jButtonInvertir;
     private javax.swing.JButton jButtonLista;
     private javax.swing.JScrollPane jScrollPane1;
