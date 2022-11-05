@@ -35,6 +35,7 @@ public class Formulario1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButtonInsertarIni2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableAleatorio = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -48,6 +49,23 @@ public class Formulario1 extends javax.swing.JFrame {
         jButtonLista = new javax.swing.JButton();
         jButtonIntercambiar = new javax.swing.JButton();
         jButtonIntercambiar1 = new javax.swing.JButton();
+        jButtonParesPorImpares = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jTextFieldInsertarEnTexto = new javax.swing.JTextField();
+        jButtonInsertarIni1 = new javax.swing.JButton();
+        jButtonInsertarIni3 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jTextFieldInt1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextFieldInt2 = new javax.swing.JTextField();
+        jButtonItercambiarMetodo = new javax.swing.JButton();
+
+        jButtonInsertarIni2.setText("Insertar en posicion");
+        jButtonInsertarIni2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInsertarIni2ActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,17 +154,46 @@ public class Formulario1 extends javax.swing.JFrame {
             }
         });
 
+        jButtonParesPorImpares.setText("Pares por Impares");
+        jButtonParesPorImpares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonParesPorImparesActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Posicion en la que insertar:");
+
+        jButtonInsertarIni1.setText("Insertar en posicion");
+        jButtonInsertarIni1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInsertarIni1ActionPerformed(evt);
+            }
+        });
+
+        jButtonInsertarIni3.setText("Eliminar en posicion");
+        jButtonInsertarIni3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInsertarIni3ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Posicion 1");
+
+        jLabel3.setText("Posicion 2");
+
+        jButtonItercambiarMetodo.setText("Intercambiar");
+        jButtonItercambiarMetodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonItercambiarMetodoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1)
-                            .addComponent(jScrollPane2)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButtonAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -159,44 +206,99 @@ public class Formulario1 extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButtonInsertarIni, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButtonElimIni, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonIntercambiar1)
-                    .addComponent(jButtonIntercambiar))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonLista, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonInvertir, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(42, 42, 42))
+                                .addComponent(jButtonElimIni, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButtonParesPorImpares)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButtonIntercambiar1))
+                                    .addComponent(jButtonIntercambiar))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButtonLista, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButtonInvertir, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(58, 58, 58)
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextFieldInsertarEnTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(38, 38, 38)
+                                        .addComponent(jButtonInsertarIni1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButtonInsertarIni3, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane1))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextFieldInt1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextFieldInt2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jButtonItercambiarMetodo, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonInsertarIni, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonElimIni, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonInsertarFin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonElimFin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonInvertir)
-                    .addComponent(jButtonIntercambiar1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonLista)
-                    .addComponent(jButtonIntercambiar))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonInsertarIni, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonElimIni, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonInsertarFin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonElimFin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonInvertir)
+                            .addComponent(jButtonIntercambiar1)
+                            .addComponent(jButtonParesPorImpares)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jTextFieldInt1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jTextFieldInt2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonItercambiarMetodo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jTextFieldInsertarEnTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonLista)
+                            .addComponent(jButtonIntercambiar)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonInsertarIni1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonInsertarIni3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
@@ -288,6 +390,47 @@ public class Formulario1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonIntercambiar1ActionPerformed
 
+    private void jButtonParesPorImparesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonParesPorImparesActionPerformed
+        // TODO add your handling code here:
+        listaEn.paresPorImparesRecargado();
+        mostrarListaEnlazada();
+    }//GEN-LAST:event_jButtonParesPorImparesActionPerformed
+
+    private void jButtonInsertarIni1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInsertarIni1ActionPerformed
+        // TODO add your handling code here:
+        int posicion = Integer.parseInt(jTextFieldInsertarEnTexto.getText());
+        
+        int numero = Integer.parseInt(this.jTableAleatorio.getValueAt(0, 0).toString());
+        String nombre = this.jTableAleatorio.getValueAt(0, 1).toString();
+        double costo = Double.parseDouble(this.jTableAleatorio.getValueAt(0, 2).toString());
+        
+        Dato oDato = new Dato(numero, nombre, costo);
+
+        listaEn.añadirEnPosicion(posicion, oDato);
+        mostrarListaEnlazada();
+    }//GEN-LAST:event_jButtonInsertarIni1ActionPerformed
+
+    private void jButtonInsertarIni2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInsertarIni2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonInsertarIni2ActionPerformed
+
+    private void jButtonInsertarIni3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInsertarIni3ActionPerformed
+        // TODO add your handling code here:
+        int posicion = Integer.parseInt(jTextFieldInsertarEnTexto.getText());
+        
+        listaEn.eliminarPosicion(posicion);
+        mostrarListaEnlazada();
+    }//GEN-LAST:event_jButtonInsertarIni3ActionPerformed
+
+    private void jButtonItercambiarMetodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonItercambiarMetodoActionPerformed
+        // TODO add your handling code here:
+        int posicion = Integer.parseInt(jTextFieldInt1.getText());
+        int posicion2 = Integer.parseInt(jTextFieldInt2.getText());
+        
+        listaEn.intercambiarElementoSinEliminar(posicion, posicion2);
+        mostrarListaEnlazada();
+    }//GEN-LAST:event_jButtonItercambiarMetodoActionPerformed
+
     public void mostrarListaEnlazada(){
         
         if(!listaEn.listaVacia()){
@@ -346,13 +489,24 @@ public class Formulario1 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonElimIni;
     private javax.swing.JButton jButtonInsertarFin;
     private javax.swing.JButton jButtonInsertarIni;
+    private javax.swing.JButton jButtonInsertarIni1;
+    private javax.swing.JButton jButtonInsertarIni2;
+    private javax.swing.JButton jButtonInsertarIni3;
     private javax.swing.JButton jButtonIntercambiar;
     private javax.swing.JButton jButtonIntercambiar1;
     private javax.swing.JButton jButtonInvertir;
+    private javax.swing.JButton jButtonItercambiarMetodo;
     private javax.swing.JButton jButtonLista;
+    private javax.swing.JButton jButtonParesPorImpares;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableAleatorio;
     private javax.swing.JTable jTableMostrar;
+    private javax.swing.JTextField jTextFieldInsertarEnTexto;
+    private javax.swing.JTextField jTextFieldInt1;
+    private javax.swing.JTextField jTextFieldInt2;
     // End of variables declaration//GEN-END:variables
 }
