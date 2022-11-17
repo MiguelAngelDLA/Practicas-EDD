@@ -278,7 +278,6 @@ public class ListaEnlazada<T> {
         
         if(pos2 == tamaño - 1)
                 this.insAlFinal(elem1);
-        
     }
     
     public void intercambiarElementoSinEliminar(int pos1, int pos2){

@@ -2,6 +2,7 @@
 package Formularios;
 
 import Clases.Recursividad;
+import java.util.LinkedList;
 import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -10,6 +11,8 @@ import javax.swing.table.DefaultTableModel;
 public class Formulario1 extends javax.swing.JFrame {
     Recursividad oRe;
     int [] arreglo;
+    LinkedList linkedString;
+
     public Formulario1() {
         initComponents();
         setLocationRelativeTo(null);
@@ -26,6 +29,7 @@ public class Formulario1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel10 = new javax.swing.JLabel();
         jTF_Num1 = new javax.swing.JTextField();
         jBut_CalcularFact = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -68,6 +72,12 @@ public class Formulario1 extends javax.swing.JFrame {
         jBut_MaxMin = new javax.swing.JButton();
         jLab_MaxMinArrayI = new javax.swing.JLabel();
         jLab_MaxMinArrayR = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jTFPalindromo = new javax.swing.JTextField();
+        jButtonPalindromo = new javax.swing.JButton();
+        jLab_Palindromo = new javax.swing.JLabel();
+
+        jLabel10.setText("jLabel10");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -247,6 +257,19 @@ public class Formulario1 extends javax.swing.JFrame {
         jLab_MaxMinArrayR.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLab_MaxMinArrayR.setOpaque(true);
 
+        jLabel7.setText("String original:");
+
+        jButtonPalindromo.setText("Es palindromo?");
+        jButtonPalindromo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPalindromoActionPerformed(evt);
+            }
+        });
+
+        jLab_Palindromo.setBackground(new java.awt.Color(0, 255, 255));
+        jLab_Palindromo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLab_Palindromo.setOpaque(true);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -306,13 +329,12 @@ public class Formulario1 extends javax.swing.JFrame {
                                         .addComponent(jLab_DecimABinIterativo, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLab_Recursivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLab_MCDRecursivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLab_RusoRecursivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLab_Recursivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLab_MCDRecursivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLab_RusoRecursivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLab_SerieRecursivo, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                                     .addComponent(jLab_ExpRecursivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLab_DecimABinRecursivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -346,6 +368,19 @@ public class Formulario1 extends javax.swing.JFrame {
                                         .addComponent(jLab_SumaArrayR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLab_MaxMinArrayI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(0, 53, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel7))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jTFPalindromo, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonPalindromo)
+                        .addGap(19, 19, 19)
+                        .addComponent(jLab_Palindromo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -439,7 +474,15 @@ public class Formulario1 extends javax.swing.JFrame {
                     .addComponent(jLab_MaxMinArrayI, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLab_MaxMinArrayR, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTFPalindromo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonPalindromo))
+                    .addComponent(jLab_Palindromo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
@@ -478,7 +521,7 @@ public class Formulario1 extends javax.swing.JFrame {
         this.jLab_RusoIterarivo.setText(oRe.multiplicacionRusa(n1, n2)+"");
         this.jLab_RusoRecursivo.setText(oRe.multiplicacionRusaR(n1, n2, 0)+"");
         }catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(rootPane, "No se aceptan cadenas!!! "+e.getMessage());
+            JOptionPane.showMessageDialog(rootPane, "No se acpetan cadenas!!! "+e.getMessage());
         }
     }//GEN-LAST:event_jBut_CalcularMultiRusaActionPerformed
 
@@ -486,7 +529,7 @@ public class Formulario1 extends javax.swing.JFrame {
         try{
             int pos = Integer.parseInt(this.jTF_Num1.getText());
             
-            this.jLab_SerieIterarivo.setText(oRe.fibonacciI(pos));
+            this.jLab_SerieIterarivo.setText(oRe.finobacci(pos));
             this.jLab_SerieRecursivo.setText(oRe.fibonacciR(pos,0,1,"0, 1"));
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(rootPane, "No se acpetan cadenas!!! "+e.getMessage());
@@ -522,8 +565,8 @@ public class Formulario1 extends javax.swing.JFrame {
         try{
             double x = Double.parseDouble(this.jTF_Num1.getText());
             double n = Double.parseDouble(this.jTF_Num2.getText());
-            this.jLab_ExprIterativo.setText(oRe.sumatoriaCuriosa(x,n)+"");
-            this.jLab_ExpRecursivo.setText(oRe.sumatoriaCuriosa2(x,n,0,0)+"");
+            this.jLab_ExprIterativo.setText(oRe.sumatoria(x,n)+"");
+            this.jLab_ExpRecursivo.setText(oRe.sumatoriaR(x,n,0,0)+"");
                     
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(rootPane, "No se acpetan cadenas!!! "+e.getMessage());
@@ -535,7 +578,7 @@ public class Formulario1 extends javax.swing.JFrame {
             int n1 = Integer.parseInt(this.jTF_Num1.getText());
             int n2 = Integer.parseInt(this.jTF_Num2.getText());
             
-            if(oRe.paresAmigos(n1, n2) == true)
+            if(oRe.paresAmig(n1, n2) == true)
                 this.jLab_ExprIterativo.setText("Son amigos!!!");
             else
                 this.jLab_ExprIterativo.setText("No son amigos :(");
@@ -596,6 +639,20 @@ public class Formulario1 extends javax.swing.JFrame {
         this.jLab_MaxMinArrayR.setText(oRe.maxMinR(arreglo, arreglo[n], arreglo[n], arreglo.length-1));
     }//GEN-LAST:event_jBut_MaxMinActionPerformed
 
+    private void jButtonPalindromoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPalindromoActionPerformed
+        // TODO add your handling code here:
+        String stringOr = jTFPalindromo.getText();
+        
+        String vacio = "";
+        String or2 = "";
+        for(int i = 0; i < stringOr.length(); i++){
+            if(stringOr.charAt(i) != ' ')
+                or2 += stringOr.charAt(i);
+        }
+        
+        this.jLab_Palindromo.setText(oRe.palindromo(or2, vacio, or2.length() - 1, false) + "");
+    }//GEN-LAST:event_jButtonPalindromoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -622,7 +679,6 @@ public class Formulario1 extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Formulario1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -645,6 +701,7 @@ public class Formulario1 extends javax.swing.JFrame {
     private javax.swing.JButton jBut_NumAgimos;
     private javax.swing.JButton jBut_SumarArreglo;
     private javax.swing.JButton jBut_Sumatoria;
+    private javax.swing.JButton jButtonPalindromo;
     private javax.swing.JLabel jLab_DecimABinIterativo;
     private javax.swing.JLabel jLab_DecimABinRecursivo;
     private javax.swing.JLabel jLab_ExpRecursivo;
@@ -654,6 +711,7 @@ public class Formulario1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLab_MCDRecursivo;
     private javax.swing.JLabel jLab_MaxMinArrayI;
     private javax.swing.JLabel jLab_MaxMinArrayR;
+    private javax.swing.JLabel jLab_Palindromo;
     private javax.swing.JLabel jLab_Recursivo;
     private javax.swing.JLabel jLab_RusoIterarivo;
     private javax.swing.JLabel jLab_RusoRecursivo;
@@ -662,15 +720,18 @@ public class Formulario1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLab_SumaArrayI;
     private javax.swing.JLabel jLab_SumaArrayR;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTFPalindromo;
     private javax.swing.JTextField jTF_Num1;
     private javax.swing.JTextField jTF_Num2;
     private javax.swing.JTextField jTF_TamañoArr;

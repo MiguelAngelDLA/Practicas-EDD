@@ -10,7 +10,7 @@ import java.util.Random;
 import javax.swing.JTable;
 
 /**
- *
+ *a
  * @author migue
  */
 public class Dato {

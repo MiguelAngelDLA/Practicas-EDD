@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JLabel" name="jLabel10">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel10"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -93,14 +100,12 @@
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel3" max="32767" attributes="0"/>
-                                      <Component id="jLab_Recursivo" max="32767" attributes="0"/>
-                                      <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLab_MCDRecursivo" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLab_RusoRecursivo" max="32767" attributes="0"/>
-                                      <Component id="jLabel8" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="jLabel3" max="32767" attributes="0"/>
+                                  <Component id="jLab_Recursivo" max="32767" attributes="0"/>
+                                  <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLab_MCDRecursivo" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLab_RusoRecursivo" max="32767" attributes="0"/>
+                                  <Component id="jLabel8" max="32767" attributes="0"/>
                                   <Component id="jLab_SerieRecursivo" pref="75" max="32767" attributes="0"/>
                                   <Component id="jLab_ExpRecursivo" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLab_DecimABinRecursivo" alignment="0" max="32767" attributes="0"/>
@@ -149,6 +154,23 @@
                       <EmptySpace min="0" pref="53" max="32767" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTFPalindromo" min="-2" pref="94" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jButtonPalindromo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <Component id="jLab_Palindromo" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -270,7 +292,17 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLab_MaxMinArrayR" min="-2" pref="23" max="-2" attributes="0"/>
-              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTFPalindromo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonPalindromo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jLab_Palindromo" min="-2" pref="23" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="60" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -611,6 +643,32 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLab_MaxMinArrayR">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="0" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="opaque" type="boolean" value="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="String original:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTFPalindromo">
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonPalindromo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Es palindromo?"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPalindromoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLab_Palindromo">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="0" type="rgb"/>
